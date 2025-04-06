@@ -15,7 +15,7 @@ A legendary collection of *minimalistic, bug-friendly* C programs for all your b
 
 No makefiles here, just raw terminal power.
 
-###choose your weapon(a.k.a program):
+### choose your weapon(a.k.a program):
 ```bash
   cd exp_no
 ```
@@ -33,7 +33,7 @@ gcc client.c -o client
 
 ```
 
-###⚠️ Disclaimer
+## ⚠️ Disclaimer
 
 No packets were harmed in the making of these programs.
 Except the ones that were. RIP.

@@ -1,0 +1,7 @@
+send this to server 
+this is a test file
+
+
+
+to run this experiment :
+    ./cli <ip address><file name>

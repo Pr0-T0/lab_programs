@@ -20,7 +20,7 @@ No makefiles here, just raw terminal power.
   cd exp_no
 ```
 
-### TCP Example:
+###  Example:
 ```bash
 gcc server.c -o server
 gcc client.c -o client

@@ -8,23 +8,23 @@
 int main(){
 
     int sockfd;
-    struct sockaddr_in client;
+    struct sockaddr_in server;
     char buff[2040];
 
     sockfd = socket(AF_INET,SOCK_DGRAM,0);
 
-    client.sin_family = AF_INET;
-    client.sin_port = 7777;
-    client.sin_addr.s_addr = INADDR_ANY;
+    server.sin_family = AF_INET;
+    server.sin_port = 7777;
+    server.sin_addr.s_addr = INADDR_ANY;
 
-    bind(sockfd, (struct sockaddr*)&client, sizeof(client));
+    bind(sockfd, (struct sockaddr*)&server, sizeof(server));
 
     sprintf(buff, "%s", "time");
-    sendto(sockfd, buff, sizeof(buff), 0, (struct sockaddr*)&client, sizeof(client));
+    sendto(sockfd, buff, sizeof(buff), 0, (struct sockaddr*)&server, sizeof(server));
 
 
-    int len = sizeof(client);
-    recvfrom(sockfd, buff, sizeof(buff), 0, (struct sockaddr*)&client, &len);
+    int len = sizeof(server);
+    recvfrom(sockfd, buff, sizeof(buff), 0, (struct sockaddr*)&server, &len);
 
     printf("Current time is %s",buff);;
 

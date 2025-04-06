@@ -9,15 +9,15 @@ int main(){
 
     char buff[2040];
     int sockfd, send_data_bytes, recv_data_bytes;
-    struct sockaddr_in client;
+    struct sockaddr_in server;
 
     sockfd = socket(AF_INET,SOCK_STREAM, 0);
 
-    client.sin_family = AF_INET;
-    client.sin_port = htons(3002);
-    client.sin_addr.s_addr = htonl(INADDR_ANY);
+    server.sin_family = AF_INET;
+    server.sin_port = htons(3002);
+    server.sin_addr.s_addr = htonl(INADDR_ANY);
 
-    connect(sockfd, (struct sockaddr*)&client , sizeof(client));
+    connect(sockfd, (struct sockaddr*)&server , sizeof(server));
 
     printf("Server Connected!");
 

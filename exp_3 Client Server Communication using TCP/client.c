@@ -8,7 +8,7 @@
 int main(){
 	char buff[100];
 	int status, sockfd;
-	struct sockaddr_in client;
+	struct sockaddr_in server;
 	
 	sockfd = socket(AF_INET, SOCK_STREAM, 0); //create socket
 	
@@ -17,11 +17,11 @@ int main(){
 		exit(0);
 	}
 
-	client.sin_family = AF_INET;			//Configure Client
-	client.sin_port = htons(3002);
-	client.sin_addr.s_addr = INADDR_ANY; 
+	server.sin_family = AF_INET;			//Configure Server details for connecting the Client
+	server.sin_port = htons(3002);
+	server.sin_addr.s_addr = INADDR_ANY; 
 
-	status = connect(sockfd, (struct sockaddr*)&client, sizeof(client));
+	status = connect(sockfd, (struct sockaddr*)&server, sizeof(server));
 
 	if(status == -1){
 		printf("Error in Connecting to server");
